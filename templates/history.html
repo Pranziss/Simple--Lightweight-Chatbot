@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Nova's Memory</title>
+  <style>
+    body { font-family: sans-serif; background: #1f1f2c; color: #f0f0f5; padding: 20px; }
+    .entry { margin-bottom: 20px; background: #29293d; padding: 10px 14px; border-radius: 8px; }
+    .user { color: #91e1ff; }
+    .nova { color: #f5bfff; }
+  </style>
+</head>
+<body>
+  <h2>🧠 Nova's Memory Log</h2>
+  <div id="log"></div>
+
+  <script>
+    fetch('/history')
+      .then(res => res.json())
+      .then(data => {
+        const log = document.getElementById('log');
+        data.forEach(entry => {
+          const div = document.createElement('div');
+          div.className = 'entry';
+          div.innerHTML = `
+            <div class="user"><strong>You:</strong> ${entry.user}</div>
+            <div class="nova"><strong>Nova:</strong> ${entry.nova}</div>
+          `;
+          log.appendChild(div);
+        });
+      });
+  </script>
+</body>
+</html>
