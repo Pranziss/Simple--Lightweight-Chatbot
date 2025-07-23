@@ -148,6 +148,6 @@ ollama --version
 
 ## ✉️ Contact
 
-Built with ❤️ by **yubedaoneineed/Pranziss**
+Built with ❤️ by **Pranziss/yubedaoneineed**
 
 This is my first public chatbot project — feel free to fork, star ⭐, or reach out with feedback or ideas!
