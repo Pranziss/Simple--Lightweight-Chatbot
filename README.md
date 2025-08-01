@@ -11,7 +11,7 @@ A super lightweight, **local chatbot** project designed for desktop/laptop use �
 - 💬 Local LLM chatbot powered by [Ollama](https://ollama.com)
 - 🧠 Custom memory via `memory.json`
 - 📝 Chat and journal history saved in `chat_history.json`
-- ⚡ Super lightweight and clean architecture
+- ⚡ Super lightweight and clean architecture (can be accesed by others by using local wifi connection)
 - 📦 Uses models directly pulled from Ollama (no LM Studio required)
 - 🖥️ Optimized for laptops and desktops (offline-capable)
 - 🔧 Built for simplicity and extensibility
