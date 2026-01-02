@@ -1,26 +1,25 @@
-# 💡 Very-Very-Light-Chatbot
+# 💡 Simple--Lightweight-Chatbot
 
-A super lightweight, **local chatbot** project designed for desktop/laptop use — ideal for minimal setups and quick testing.
+A super lightweight, local chatbot designed for desktop/laptop use — ideal for minimal setups, offline usage, and quick experimentation.
 
-> 🛠️ **This is my first chatbot project**, but it has been **refined and optimized** to be shared here publicly for others to explore and learn from.
+🛠️ This is my first chatbot project, later refined and optimized before being shared publicly for others to explore and learn from.
 
 ---
 
 ## 🚀 Features
 
-- 💬 Local LLM chatbot powered by [Ollama](https://ollama.com)
-- 🧠 Custom memory via `memory.json`
-- 📝 Chat and journal history saved in `chat_history.json`
-- ⚡ Super lightweight and clean architecture (can be accesed by others by using local wifi connection)
-- 📦 Uses models directly pulled from Ollama (no LM Studio required)
-- 🖥️ Optimized for laptops and desktops (offline-capable)
-- 🔧 Built for simplicity and extensibility
+- 💬 Local LLM chatbot powered by Ollama
+- 🧠 Custom persistent memory using memory.json
+- 📝 Chat and journal history stored in chat_history.json
+- ⚡ Lightweight and clean architecture (accessible via local Wi-Fi)
+- 📦 Uses models pulled directly from Ollama (no LM Studio required)
+- 🖥️ Optimized for laptops and desktops
+- 🔌 Offline-capable
+- 🔧 Built for simplicity and future extensibility
 
 ---
 
 ## 🎞️ Demo Preview
-
-Here’s a look at the chatbot running locally:
 
 ![Chatbot Demo](demo.gif)
 
@@ -28,126 +27,95 @@ Here’s a look at the chatbot running locally:
 
 ## 🖥️ System Requirements
 
-> 💡 This chatbot was developed and tested on the following specs:
+Developed and tested on:
 
-- 🔹 Intel Core **i5-13420H**
-- 🔹 **RTX 4050** Laptop GPU
-- 🔹 **16GB RAM**
-- 🔹 Windows 11
+- Intel Core i5-13420H
+- RTX 4050 Laptop GPU
+- 16GB RAM
+- Windows 11
 
 Minimum recommended:
 
-- ✅ Quad-core CPU
-- ✅ 8–16GB RAM
-- ✅ Optional: Discrete GPU (for faster performance)
-- ✅ Smaller quantized models (like Phi-2) work well on modest hardware
+- Quad-core CPU
+- 8–16GB RAM
+- Optional discrete GPU
+- Smaller quantized models (e.g. Phi-2) work well on modest hardware
 
 ---
 
 ## 📁 Folder Structure
 
-```
-├── app.py                  # Main Flask app
-├── brain.py                # Core chatbot flow and logic
-├── functions/              # Modular helper functions
-│   ├── __init__.py
-│   ├── history_func.py     # Manages conversation history
-│   ├── journal_func.py     # Handles journaling features
-│   ├── memory_func.py      # Memory system logic
-│   ├── model_runner.py     # Interacts with LLM via Ollama
-│   └── prompt.py           # Prompt creation/injection
-├── templates/
-│   ├── index.html          # Main chat UI
-│   └── history.html        # Journal/history viewer
-├── static/
-│   ├── style.css           # Basic CSS styling
-│   └── script.js           # Frontend behavior
-├── memory.json             # Persistent chatbot memory
-├── chat_history.json       # Stored conversation/journal logs
-├── demo.gif                # Optional: Local UI preview
-```
+app.py                  → Main Flask application  
+brain.py                → Core chatbot logic  
+functions/              → Modular helper functions  
+• history_func.py       → Conversation history  
+• journal_func.py       → Journaling logic  
+• memory_func.py        → Memory system  
+• model_runner.py       → Ollama interaction  
+• prompt.py             → Prompt construction  
+
+templates/  
+• index.html            → Main chat UI  
+• history.html          → History & journal viewer  
+
+static/  
+• style.css             → Styling  
+• script.js             → Frontend logic  
+
+memory.json             → Persistent chatbot memory  
+chat_history.json       → Stored chats & journals  
+demo.gif                → UI preview  
 
 ---
 
-## 🧠 Ollama-Based Model Setup
+## 🧠 Ollama Model Setup
 
-This project skips the LM Studio step and directly uses Ollama to pull and run the model:
+1. Install Ollama  
+   https://ollama.com
 
-### 🔹 Step 1: Install Ollama
+2. Pull a model (example: Phi-2)
 
-Download and install from [https://ollama.com](https://ollama.com)
+   ollama pull phi:2
 
-### 🔹 Step 2: Pull Model (e.g. Phi-2)
+3. Run the model
 
-```bash
-ollama pull phi:2
-```
+   ollama run phi:2
 
-> 🧠 This project uses the **Phi-2** model for its balance of speed and performance. Feel free to swap in other models (like `mistral`, `llama3`, or others).
-
-### 🔹 Step 3: Run the Model
-
-```bash
-ollama run phi:2
-```
-
-Your local model is now running and ready for chat.
+Phi-2 is used for its balance of speed and performance.  
+You may also use models like mistral or llama3.
 
 ---
 
 ## 🔧 How to Run the App
 
-### 1. Clone the Project
+1. Clone the repository
 
-```bash
-git clone https://github.com/yourusername/very-very-light-chatbot.git
-cd very-very-light-chatbot
-```
+   git clone https://github.com/Pranziss/Simple--Lightweight-Chatbot.git  
+   cd Simple--Lightweight-Chatbot
 
-### 2. Create Virtual Environment (Optional)
+2. (Optional) Create a virtual environment
 
-```bash
-python -m venv venv
-venv\Scripts\activate   # On Windows
-# OR
-source venv/bin/activate  # On Mac/Linux
-```
+   python -m venv venv  
+   venv\Scripts\activate   (Windows)  
+   source venv/bin/activate (Mac/Linux)
 
-### 3. Install Flask
+3. Install dependencies
 
-```bash
-pip install flask
-```
+   pip install flask
 
-### 4. Start Ollama + Run Flask App
+4. Start Ollama and run the app
 
-Make sure Ollama is running your model (`phi:2` or another):
+   ollama run phi:2  
+   python app.py
 
-```bash
-ollama run phi:2
-python app.py
-```
+5. Open in browser
 
-### 5. Open in Browser
-
-Go to:
-
-```
-http://localhost:11434
-```
+   http://localhost:5000
 
 ---
 
-## ✅ Check Your Versions
-
-```bash
-python --version
-flask --version
-ollama --version
-```
-
 ## ✉️ Contact
 
-Built with ❤️ by **Pranziss/yubedaoneineed**
+Built with ❤️ by Pranziss / yubedaoneineed
 
-This is my first public chatbot project — feel free to fork, star ⭐, or reach out with feedback or ideas!
+This is my first public chatbot project — feel free to fork, star ⭐, or reach out with feedback and ideas.
