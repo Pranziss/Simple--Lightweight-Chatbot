@@ -1,17 +1,33 @@
-# 💡 Simple--Lightweight-Chatbot
+# 💡 Simple-Lightweight-Chatbot
 
-A super lightweight, local chatbot designed for desktop/laptop use — ideal for minimal setups, offline usage, and quick experimentation.
+A super lightweight, **local-first chatbot** designed for desktop/laptop use — ideal for minimal setups, **offline usage**, and quick experimentation.
 
-🛠️ This is my first chatbot project, later refined and optimized before being shared publicly for others to explore and learn from.
+🛠️ This is my **first chatbot project**, later refined and optimized before being shared publicly for others to explore, learn from, and build upon.
+
+---
+
+## 🧠 Design Philosophy (Local-First AI)
+
+This chatbot is intentionally designed to run **locally** using Ollama instead of cloud-based AI APIs.
+
+**Why local-first?**
+- 💸 No API or usage costs
+- 🔒 Improved data privacy
+- 🔌 Fully offline-capable
+- 🧠 Full control over the AI model and prompts
+- 🧪 Ideal for experimentation and learning system architecture
+
+Due to hardware and runtime requirements, this project is **not deployed on free cloud hosting platforms** and is meant to be run on personal machines.
 
 ---
 
 ## 🚀 Features
 
 - 💬 Local LLM chatbot powered by Ollama
-- 🧠 Custom persistent memory using memory.json
-- 📝 Chat and journal history stored in chat_history.json
-- ⚡ Lightweight and clean architecture (accessible via local Wi-Fi)
+- 🧠 Custom persistent memory using `memory.json`
+- 📝 Chat and journal history stored in `chat_history.json`
+- ⚡ Lightweight and clean architecture
+- 🌐 Accessible via browser on the same local machine or local network
 - 📦 Uses models pulled directly from Ollama (no LM Studio required)
 - 🖥️ Optimized for laptops and desktops
 - 🔌 Offline-capable
@@ -29,10 +45,10 @@ A super lightweight, local chatbot designed for desktop/laptop use — ideal for
 
 Developed and tested on:
 
-- Intel Core i5-13420H
-- RTX 4050 Laptop GPU
-- 16GB RAM
-- Windows 11
+- Intel Core i5-13420H  
+- RTX 4050 Laptop GPU  
+- 16GB RAM  
+- Windows 11  
 
 Minimum recommended:
 
@@ -44,27 +60,28 @@ Minimum recommended:
 ---
 
 ## 📁 Folder Structure
+   app.py → Main Flask application
+brain.py → Core chatbot logic
 
-app.py                  → Main Flask application  
-brain.py                → Core chatbot logic  
-functions/              → Modular helper functions  
-• history_func.py       → Conversation history  
-• journal_func.py       → Journaling logic  
-• memory_func.py        → Memory system  
-• model_runner.py       → Ollama interaction  
-• prompt.py             → Prompt construction  
+functions/
+├─ history_func.py → Conversation history handling
+├─ journal_func.py → Journaling logic
+├─ memory_func.py → Persistent memory system
+├─ model_runner.py → Ollama model interaction
+└─ prompt.py → Prompt construction
 
-templates/  
-• index.html            → Main chat UI  
-• history.html          → History & journal viewer  
+templates/
+├─ index.html → Main chat UI
+└─ history.html → History & journal viewer
 
-static/  
-• style.css             → Styling  
-• script.js             → Frontend logic  
+static/
+├─ style.css → Styling
+└─ script.js → Frontend logic
 
-memory.json             → Persistent chatbot memory  
-chat_history.json       → Stored chats & journals  
-demo.gif                → UI preview  
+memory.json → Persistent chatbot memory
+chat_history.json → Stored chats & journals
+demo.gif → UI preview
+
 
 ---
 
@@ -74,49 +91,52 @@ demo.gif                → UI preview
    https://ollama.com
 
 2. Pull a model (example: Phi-2)
-
-   ollama pull phi:2
+ollama pull phi:2
 
 3. Run the model
+ollama run phi:2
 
-   ollama run phi:2
 
 Phi-2 is used for its balance of speed and performance.  
-You may also use models like mistral or llama3.
+You may also use models like `mistral` or `llama3`.
 
 ---
 
 ## 🔧 How to Run the App
 
 1. Clone the repository
-
-   git clone https://github.com/Pranziss/Simple--Lightweight-Chatbot.git  
-   cd Simple--Lightweight-Chatbot
+-git clone https://github.com/Pranziss/Simple--Lightweight-Chatbot.git
+-cd Simple--Lightweight-Chatbot
 
 2. (Optional) Create a virtual environment
-
-   python -m venv venv  
-   venv\Scripts\activate   (Windows)  
-   source venv/bin/activate (Mac/Linux)
+-python -m venv venv
+venv\Scripts\activate # Windows
+source venv/bin/activate # Mac/Linux
 
 3. Install dependencies
-
-   pip install flask
+-pip install flask
 
 4. Start Ollama and run the app
+ollama run phi:2
+python app.py
 
-   ollama run phi:2  
-   python app.py
+5. Run it
 
-5. Open in browser
 
-   http://localhost:5000
+---
+
+## 🚀 Future Improvements
+
+- Optional cloud-based deployment using external AI APIs
+- Streaming responses (WebSockets)
+- UI modernization using React + Tailwind
+- Enhanced memory retrieval strategies
 
 ---
 
 ## ✉️ Contact
 
-Built with ❤️ by Pranziss / yubedaoneineed
+Built with ❤️ by **Pranziss / yubedaoneineed**
 
 This is my first public chatbot project — feel free to fork, star ⭐, or reach out with feedback and ideas.
 
