@@ -134,6 +134,32 @@ python app.py
 
 ---
 
+## 📜 Credits & Licensing
+
+This project builds on open-source tools that make local AI experimentation accessible:
+
+- **Ollama** — local LLM runtime for on-device inference
+- Language models used via Ollama retain their **original licenses**
+  (e.g. Phi-2, Mistral, LLaMA-based models)
+
+This project itself is released under the **MIT License**.  
+See the `LICENSE` file for more details.
+
+---
+
+## ⚠️ Disclaimer
+
+This chatbot was developed as a **learning and experimentation project**.
+
+AI-generated responses may be inaccurate, incomplete, or misleading.
+This system is **not intended for production or critical use**.
+Always verify important information independently.
+
+Local model behavior depends heavily on hardware, model choice,
+and prompt configuration.
+
+---
+
 ## ✉️ Contact
 
 Built with ❤️ by **Pranziss / yubedaoneineed**
